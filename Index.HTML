@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>yaso happy birthday</title>
+	<style>
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+		}
+		input[type="password"] {
+			margin-bottom: 10px;
+			padding: 5px;
+			font-size: 16px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			width: 200px;
+			text-align: center;
+		}
+		button {
+			padding: 10px 20px;
+			font-size: 16px;
+			border-radius: 5px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			cursor: pointer;
+			transition: background-color 0.3s ease-in-out;
+		}
+		button:hover {
+			background-color: #3e8e41;
+		}
+		img {
+			display: none;
+			max-width: 500px;
+			margin-top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<form onsubmit="return false;">
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password">
+		<button onclick="checkPassword()">Submit</button>
+	</form>
+	<img id="myImage" src="https://via.placeholder.com/500x500" alt="Image">
+	<script>
+        window.onload = function() {
+			fetch('https://happyyasoo.com/data')
+				.then(response => response.json())
+				.then(data => {
+					const container = document.getElementById('data-container');
+					container.innerHTML = JSON.stringify(data);
+				})
+				.catch(error => console.error(error));
+		};
+		function checkPassword() {
+			var password = document.getElementById("password").value;
+			if (password === "grex") {
+				document.getElementById("myImage").style.display = "block";
+			} else {
+				alert("Incorrect password. Please try again.");
+			}
+		}
+	</script>
+</body>
+</html>
