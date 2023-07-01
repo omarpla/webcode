@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>yaso happy birthday</title>
+	<style>
+		body{
+			background-image: url(1.jpg);
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			background-size: 100%;
+		}
+		.password-form {
+			background-color: #ffffff; 
+			width: 300px;
+			padding: 20px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.password-form input {
+			display: block;
+			align-items: center;
+			width: 90%;
+			padding: 10px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			margin-bottom: 20px;  
+		}
+
+		.password-form button {
+			cursor: pointer;
+			align-items: center;
+			width: 100%;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			background: #000;
+			color: #fff;
+		}
+		 p {
+			display: none;
+			font-size: 116.667px;
+			font-family: "Mj_Afaaq";
+			color: rgb(0, 0, 0);
+			font-weight: bold;
+			line-height: 1;
+			text-align: center;
+			position: top;
+}
+
+
+		.password-form button:hover {
+			background: #111;
+		}
+			img {
+				display: none;
+				align-items: center;
+				max-width: 500px;
+				margin-top: 50px;
+			}
+	</style>
+</head>
+<body>
+	<p id="word">كسم معرفتك</p>
+	<br>
+	<form class="password-form" onsubmit="return false;">
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password">
+		<button onclick="checkPassword()">Submit</button>
+	</form>
+	<br>
+	<img id="myImage" src="https://via.placeholder.com/500x500" alt="Image">
+	<script>
+		function checkPassword() {
+			var password = document.getElementById("password").value;
+			if (password === "grex") {
+				document.getElementById("word").style.display = "block";
+			} else {
+				alert("Incorrect password. Please try again.");
+			}
+		}
+	</script>
+</body>
+</html>
